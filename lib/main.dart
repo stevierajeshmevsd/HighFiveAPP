@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/loading.dart';
 import 'package:flutter_application_1/social.dart';
+import 'package:flutter_application_1/game.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp1()));
@@ -33,14 +34,20 @@ class _MyAppState extends State<MyApp1> {
                       width: 1,
                     ),
                     primary: Color.fromARGB(220, 255, 112, 112)),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => game()));
+                },
                 icon: Icon(Icons.add),
                 label: Text('New Game'),
               )),
           Container(
               margin: EdgeInsets.only(left: 5, right: 5),
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => game()));
+                },
                 style: ElevatedButton.styleFrom(
                     side: BorderSide(
                       width: 1,

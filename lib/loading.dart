@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:event_listener/event_listener.dart';
+import 'package:flutter_application_1/loading.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(loading());
 
-class MyApp extends StatelessWidget {
+class loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Image Demo'),
-          backgroundColor: Colors.white,
-        ),
         body: Center(
           child: Column(
             children: <Widget>[

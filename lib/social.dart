@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:event_listener/event_listener.dart';
 import 'package:url_launcher/link.dart';
 
@@ -24,15 +25,6 @@ class AppBarBack extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      appBar: AppBar(
-          automaticallyImplyLeading: true,
-          //`true` if you want Flutter to automatically add Back Button when needed,
-          //or `false` if you want to force your own back button every where
-          title: const Text('Back'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back),
-            onPressed: () => Navigator.pop(context, false),
-          )),
       body: Center(
         child: Stack(
           children: <Widget>[
@@ -56,7 +48,7 @@ class AppBarBack extends StatelessWidget {
                   height: 150, width: 150),
             ),
             Align(
-              alignment: const Alignment(0.0, -0.58),
+              alignment: const Alignment(0.0, -0.5),
               child: Image.asset('images/image67.png', height: 60, width: 60),
             ),
             Align(
@@ -65,11 +57,11 @@ class AppBarBack extends StatelessWidget {
                   Image.asset('images/TikTok-logo.png', height: 90, width: 90),
             ),
             Align(
-              alignment: const Alignment(0.0, 0.0),
+              alignment: const Alignment(0.0, -0.02),
               child: Image.asset('images/Facebook.png', height: 95, width: 95),
             ),
             Align(
-              alignment: const Alignment(0.0, 0.3),
+              alignment: const Alignment(0.0, 0.21),
               child: Image.asset('images/high_five_logo_revert.png',
                   height: 80, width: 80),
             ),
@@ -83,14 +75,15 @@ class AppBarBack extends StatelessWidget {
               ),
             ),
             Align(
-              alignment: const Alignment(0.0, 0.6),
+              alignment: const Alignment(0.0, 0.5),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  foregroundColor: Colors.white,
-                  backgroundColor:
-                      const Color.fromRGBO(255, 122, 158, 1), // foreground
-                ),
-                onPressed: () {},
+                    shadowColor: Color.fromRGBO(255, 122, 158, 1) // foreground
+                    ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyApp1()));
+                },
                 child: const Text('Back'),
               ),
             ),

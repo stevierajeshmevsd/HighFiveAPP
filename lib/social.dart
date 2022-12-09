@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:event_listener/event_listener.dart';
+import 'package:url_launcher/link.dart';
 
 void main() => runApp(SocialMedia());
 
@@ -8,7 +9,7 @@ class SocialMedia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Social Screen',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -51,7 +52,7 @@ class AppBarBack extends StatelessWidget {
             ),
             Align(
               alignment: const Alignment(0.0, -1.0),
-              child: Image.network('images/HIGH_FIVE_LOGO.png',
+              child: Image.asset('images/HIGH_FIVE_LOGO.png',
                   height: 150, width: 150),
             ),
             Align(
@@ -91,6 +92,17 @@ class AppBarBack extends StatelessWidget {
                 ),
                 onPressed: () {},
                 child: const Text('Back'),
+              ),
+            ),
+            Align(
+              alignment: const Alignment(0.5, 0.6),
+              child: Link(
+                target: LinkTarget.blank,
+                uri: Uri.parse('https://flutter.dev'),
+                builder: ((context, followLink) => ElevatedButton(
+                      onPressed: followLink,
+                      child: const Text('open link'),
+                    )),
               ),
             ),
             Align(

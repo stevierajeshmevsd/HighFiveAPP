@@ -37,11 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
   event_listener: ^0.2.0
-<<<<<<< HEAD
-  url_launcher: ^6.1.7
-  flutter_html: ^2.2.1
-=======
->>>>>>> 0bc5400f7b857eb3cb2cb04714a54de3e0966099
 
 dev_dependencies:
   flutter_test:
@@ -92,4 +87,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-

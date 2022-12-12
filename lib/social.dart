@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:event_listener/event_listener.dart';
-import 'package:url_launcher/link.dart';
 
 void main() => runApp(SocialMedia());
 
@@ -85,17 +84,6 @@ class AppBarBack extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => MyApp1()));
                 },
                 child: const Text('Back'),
-              ),
-            ),
-            Align(
-              alignment: const Alignment(0.5, 0.6),
-              child: Link(
-                target: LinkTarget.blank,
-                uri: Uri.parse('https://flutter.dev'),
-                builder: ((context, followLink) => ElevatedButton(
-                      onPressed: followLink,
-                      child: const Text('open link'),
-                    )),
               ),
             ),
             Align(

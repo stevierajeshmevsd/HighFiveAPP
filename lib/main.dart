@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Splash.dart';
 import 'package:flutter_application_1/loading.dart';
 import 'package:flutter_application_1/social.dart';
 import 'package:flutter_application_1/game.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp1()));
+  runApp(MaterialApp(home: Splash()));
 }
 
 class MyApp1 extends StatefulWidget {

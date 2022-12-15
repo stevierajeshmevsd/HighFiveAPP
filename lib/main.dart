@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Splash.dart';
 import 'package:flutter_application_1/loading.dart';
 import 'package:flutter_application_1/social.dart';
 import 'package:flutter_application_1/game.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp1()));
+  runApp(MaterialApp(home: Splash()));
 }
 
 class MyApp1 extends StatefulWidget {
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp1> {
             Image.asset('images/HIGH_FIVE_LOGO.png', height: 200, width: 240),
       ),
       Container(
-        margin: EdgeInsets.only(left: 19, top: 70, right: 19, bottom: 0),
+        margin: const EdgeInsets.only(left: 19, top: 70, right: 19, bottom: 0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
               margin: EdgeInsets.only(left: 5, right: 5),

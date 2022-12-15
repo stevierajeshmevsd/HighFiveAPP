@@ -62,7 +62,7 @@ class game extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => loading()));
+                                  builder: (context) => MyApp1()));
                         },
                         icon: Icon(Icons.arrow_circle_left),
                         label: Text('Back'),
@@ -75,7 +75,7 @@ class game extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => loading()));
+                                  builder: (context) => MyApp1()));
                         },
                         style: ElevatedButton.styleFrom(
                             side: BorderSide(

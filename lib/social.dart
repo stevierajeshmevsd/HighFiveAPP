@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:event_listener/event_listener.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+final Uri _url = Uri.parse('https://www.high5mevsd.org/');
+final Uri _uri =
+    Uri.parse('https://www.facebook.com/profile.php?id=100086964819025');
+final Uri _uro = Uri.parse('https://www.tiktok.com');
+final Uri _urn = Uri.parse('https://www.instagram.com');
 
 void main() => runApp(SocialMedia());
 
@@ -9,7 +16,7 @@ class SocialMedia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Social Screen',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -30,12 +37,12 @@ class AppBarBack extends StatelessWidget {
             Align(
               alignment: const Alignment(0.0, -0.25),
               child: SizedBox(
-                width: 100.00,
-                height: 350.00,
+                width: 110.00,
+                height: 380.00,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.lightBlueAccent,
+                    color: Color.fromARGB(122, 111, 209, 255),
                   ),
                   // Put Your Child widget here.
                 ),
@@ -44,28 +51,50 @@ class AppBarBack extends StatelessWidget {
             Align(
               alignment: const Alignment(0.0, -1.0),
               child: Image.asset('images/HIGH_FIVE_LOGO.png',
-                  height: 150, width: 150),
+                  height: 180, width: 180),
             ),
-            Align(
-              alignment: const Alignment(0.0, -0.5),
-              child: Image.asset('images/image67.png', height: 60, width: 60),
+            new GestureDetector(
+              onTap: launchUrl4,
+              child: new Container(
+                child: Align(
+                  alignment: const Alignment(0.0, -0.5),
+                  child:
+                      Image.asset('images/image67.png', height: 60, width: 60),
+                ),
+              ),
             ),
-            Align(
-              alignment: const Alignment(0.0, -0.3),
-              child:
-                  Image.asset('images/TikTok-logo.png', height: 90, width: 90),
+            new GestureDetector(
+                onTap: launchUrl3,
+                child: new Container(
+                  child: Align(
+                    alignment: const Alignment(0.0, -0.3),
+                    child: Image.asset('images/TikTok-logo.png',
+                        height: 90, width: 90),
+                  ),
+                )),
+            new GestureDetector(
+              onTap: launchUrl2,
+              child: new Container(
+                child: Align(
+                  alignment: const Alignment(0.0, -0.02),
+                  child:
+                      Image.asset('images/Facebook.png', height: 95, width: 95),
+                ),
+              ),
             ),
-            Align(
-              alignment: const Alignment(0.0, -0.02),
-              child: Image.asset('images/Facebook.png', height: 95, width: 95),
-            ),
-            Align(
-              alignment: const Alignment(0.0, 0.21),
-              child: Image.asset('images/high_five_logo_revert.png',
-                  height: 80, width: 80),
+            // ignore: unnecessary_new
+            new GestureDetector(
+              onTap: _launchUrl,
+              child: new Container(
+                child: Align(
+                  alignment: const Alignment(0.0, 0.21),
+                  child: Image.asset('images/high_five_logo_revert.png',
+                      height: 80, width: 80),
+                ),
+              ),
             ),
             const Align(
-              alignment: Alignment(0.6, 0.3),
+              alignment: Alignment(0.9, 0.25),
               child: SizedBox(
                 width: 150,
                 child: Text(
@@ -75,16 +104,20 @@ class AppBarBack extends StatelessWidget {
             ),
             Align(
               alignment: const Alignment(0.0, 0.5),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    shadowColor: Color.fromRGBO(255, 122, 158, 1) // foreground
-                    ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MyApp1()));
-                },
-                child: const Text('Back'),
-              ),
+              child: SizedBox(
+                  height: 40,
+                  width: 110,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(220, 255, 112, 112),
+                        textStyle: const TextStyle(fontSize: 17) // foreground
+                        ),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => MyApp1()));
+                    },
+                    child: const Text('Back'),
+                  )),
             ),
             Align(
               alignment: const Alignment(0.0, 1.38),
@@ -95,5 +128,29 @@ class AppBarBack extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw 'Could not launch $_url';
+  }
+}
+
+Future<void> launchUrl2() async {
+  if (!await launchUrl(_uri)) {
+    throw 'Could not launch $_uri';
+  }
+}
+
+Future<void> launchUrl3() async {
+  if (!await launchUrl(_uro)) {
+    throw 'Could not launch $_uro';
+  }
+}
+
+Future<void> launchUrl4() async {
+  if (!await launchUrl(_urn)) {
+    throw 'Could not launch $_urn';
   }
 }

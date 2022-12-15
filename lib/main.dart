@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp1> {
             Image.asset('images/HIGH_FIVE_LOGO.png', height: 200, width: 240),
       ),
       Container(
-        margin: EdgeInsets.only(left: 19, top: 70, right: 19, bottom: 0),
+        margin: const EdgeInsets.only(left: 19, top: 70, right: 19, bottom: 0),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
               margin: EdgeInsets.only(left: 5, right: 5),

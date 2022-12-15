@@ -4,7 +4,8 @@ import 'package:event_listener/event_listener.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final Uri _url = Uri.parse('https://www.high5mevsd.org/');
-final Uri _uri = Uri.parse('https://www.facebook.com');
+final Uri _uri =
+    Uri.parse('https://www.facebook.com/profile.php?id=100086964819025');
 final Uri _uro = Uri.parse('https://www.tiktok.com');
 final Uri _urn = Uri.parse('https://www.instagram.com');
 
